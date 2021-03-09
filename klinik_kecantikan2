@@ -1,0 +1,302 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 26, 2020 at 09:54 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `klinik_kecantikan2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_dokter`
+--
+
+CREATE TABLE `data_dokter` (
+  `ID_Dokter` int(11) NOT NULL,
+  `Nama_Dokter` varchar(55) NOT NULL,
+  `Jadwal_Dokter` varchar(20) NOT NULL,
+  `Jam` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_dokter`
+--
+
+INSERT INTO `data_dokter` (`ID_Dokter`, `Nama_Dokter`, `Jadwal_Dokter`, `Jam`) VALUES
+(1, 'Dr. Deviyane Marista', 'Senin-Rabu', '09.00-17.00'),
+(2, 'Dr. Muhammad Yosi Putu', 'Kamis-Minggu', '09.00-17.00'),
+(4, 'Dr. Deviyane2', 'Senin-Jumat', '10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_konsul`
+--
+
+CREATE TABLE `data_konsul` (
+  `ID_Konsul` int(11) NOT NULL,
+  `ID_Pasien` varchar(11) NOT NULL,
+  `ID_Dokter` varchar(11) NOT NULL,
+  `Tanggal` varchar(15) NOT NULL,
+  `Jam` varchar(10) NOT NULL,
+  `Pernah_Konsul` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_konsul`
+--
+
+INSERT INTO `data_konsul` (`ID_Konsul`, `ID_Pasien`, `ID_Dokter`, `Tanggal`, `Jam`, `Pernah_Konsul`) VALUES
+(1, '1', '1', '2020-10-23', '11:00:00', 'Belum');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_pasien`
+--
+
+CREATE TABLE `data_pasien` (
+  `ID_Pasien` int(11) NOT NULL,
+  `No_Identitas` varchar(12) NOT NULL,
+  `Nama_Pasien` varchar(20) NOT NULL,
+  `Email` varchar(25) NOT NULL,
+  `No_Hp` varchar(12) NOT NULL,
+  `Alamat` text NOT NULL,
+  `Tgl_Lahir` varchar(10) NOT NULL,
+  `Jenis_Kelamin` varchar(10) NOT NULL,
+  `Jenis_Kulit` varchar(10) NOT NULL,
+  `Pekerjaan` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_pasien`
+--
+
+INSERT INTO `data_pasien` (`ID_Pasien`, `No_Identitas`, `Nama_Pasien`, `Email`, `No_Hp`, `Alamat`, `Tgl_Lahir`, `Jenis_Kelamin`, `Jenis_Kulit`, `Pekerjaan`) VALUES
+(1, '1920010065', 'Rina Fadhillah', 'rinafd25@gmail.com', '0896756789', 'Jakarta Timur', '2000-06-27', 'Perempuan', 'Berjerawat', 'Pelajar'),
+(2, '1920020078', 'Shaqila Azkadhina', 'shaqila06@gmail.com', '089678654', 'Bekasi', '2000-10-07', 'Perempuan', 'Berjerawat', 'Mahasiswa'),
+(3, '1920019876', 'Sukhayati', 'Sukhayati2106@gmail.com', '085567856', 'Bekasi', '1977-06-25', 'Perempuan', 'Normal', 'Guru'),
+(4, '198007867', 'Putri Khayla', 'ptrkhayla@gmail.com', '0896789008', 'Jakarta Timur', '1999-06-06', 'Perempuan', 'Normal', 'Mahasiswa'),
+(5, '1920010089', 'Amran Pratama Putra', 'prtmptr@gmail.com', '0896756765', 'Bandung', '2000-06-08', 'Laki-Laki', 'Normal', 'Mahasiswa'),
+(6, '1920010789', 'Eka Diah Pramesti', 'ekadiah29@gmail.com', '08967568976', 'Bekasi', '2002-08-09', 'Perempuan', 'Berjerawat', 'Mahasiswa'),
+(7, '198798098', 'Almeer Sekh Zabir', 'almeersekh@gmail.com', '0878675678', 'Bekasi', '2000-07-09', 'Laki-Laki', 'Kering', 'Karyawan Swasta'),
+(8, '1920019878', 'Xena Janitra Latifah', 'xenajanit@gmail.com', '0878675645', 'Bekasi', '1986-10-09', 'Perempuan', 'Normal', 'Guru'),
+(10, '19200456454', 'Yuni Khairunnisa', 'chaerunnisa@gmail.com', '08765678', 'Jakarta Timur', '1998-11-06', 'Perempuan', 'Normal', 'Mahasiswa'),
+(11, '19200987678', 'Intan Dian Safitri', 'intandian@gmail.com', '0876567890', 'Bekasi', '2000-09-08', 'Perempuan', 'Berjerawat', 'Mahasiswa'),
+(12, '19200987678', 'Intan Dian Safitri', 'intandian@gmail.com', '0876567890', 'Bekasi', '2000-09-08', 'Perempuan', 'Berjerawat', 'Mahasiswa'),
+(13, '192008767', 'Tarisa Khairanisa', 'tarish292@gmail.com', '0815678909', 'Bekasi', '2000-12-09', 'Perempuan', 'Berjerawat', 'Karyawan Swasta'),
+(14, '1920089767', 'Wilda Alyka', 'wildaalyka@gmail.com', '0896785678', 'Bekasi', '2000-09-07', 'Perempuan', 'Berjerawat', 'Mahasiswa'),
+(15, '1920010060', 'Azam Altafhusien', 'azamalt@gmail.com', '0896789765', 'Bekasi', '1995-08-09', 'Laki-Laki', 'Normal', 'Karyawan Swasta'),
+(18, '19200109878', 'Gita Syafitri', 'gitasaf26@gmail.com', '089786787', 'Bandung', '1990-09-10', 'Perempuan', 'Normal', 'Influencer'),
+(19, '1920010054', 'Andi Hakim', 'andhakin@gmail.com', '0898787656', 'Bekasi', '1990-01-09', 'Laki-Laki', 'Berjerawat', 'Karyawan Swasta'),
+(21, '1920010098', 'Made Haryati', 'madehrt@gmail.com', '08789878987', 'Jakarta Timur', '2000-09-10', 'Perempuan', 'Kering', 'Mahasiswa'),
+(22, '19200987770', 'Cheisa Efta Affandy', 'cheisaeff@gmail.com', '0897890987', 'Depok', '2000-12-01', 'Laki-Laki', 'Berjerawat', 'Mahasiswa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_treatment`
+--
+
+CREATE TABLE `data_treatment` (
+  `ID_Treatment` int(11) NOT NULL,
+  `Jenis Treatment` varchar(20) NOT NULL,
+  `Harga` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_treatment`
+--
+
+INSERT INTO `data_treatment` (`ID_Treatment`, `Jenis Treatment`, `Harga`) VALUES
+(1, 'Facial Acne ', 'Rp. 300.000'),
+(2, 'Facial Acne', 'Rp.200.000'),
+(3, 'Laser Acne PPP', 'Rp. 900.000'),
+(4, 'Laser Glow', 'Rp. 1.000.000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `No_Reservation` int(11) NOT NULL,
+  `ID_Pasien` varchar(11) NOT NULL,
+  `Jenis_Treatment` varchar(15) NOT NULL,
+  `Jumlah` varchar(5) NOT NULL,
+  `Tanggal` varchar(10) NOT NULL,
+  `Jam` varchar(10) NOT NULL,
+  `Konsul` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`No_Reservation`, `ID_Pasien`, `Jenis_Treatment`, `Jumlah`, `Tanggal`, `Jam`, `Konsul`) VALUES
+(1, '1', 'Facial Glow', '2', '2020-10-23', '11:00', 'Ya'),
+(2, '2', 'Laser Acne PPP', '2', '2020-10-30', '12.00', 'Tidak'),
+(4, '4', 'Laser Acne PPP', '2', '2020-10-23', '14.00', 'Ya'),
+(5, '5', 'Facial Acne', '1', '2020-11-08', '12.00', 'Ya'),
+(6, '6', 'Facial Glow', '2', '2020-11-01', '13.00', 'Tidak'),
+(7, '7', 'Facial Glow', '2', '2020-10-30', '14.00', 'Ya'),
+(8, '8', 'Facial Glow', '2', '2020-10-26', '11.00', 'Tidak'),
+(9, '9', 'Laser Glow', '1', '2020-11-01', '15.00', 'Ya'),
+(10, '19', 'Whitening Peel', '1', '2020-10-29', '15.00', 'Tidak'),
+(12, '21', 'Laser Glow', '1', '2020-10-29', '15.00', 'Ya'),
+(13, '22', 'Facial Acne', '1', '2020-10-25', '14.00', 'Tidak');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_admin`
+--
+
+CREATE TABLE `tbl_admin` (
+  `id_admin` int(11) NOT NULL,
+  `username_admin` varchar(55) NOT NULL,
+  `password_admin` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`id_admin`, `username_admin`, `password_admin`) VALUES
+(1, 'salsabil', 'akusalsa'),
+(2, 'rani2807', 'akurani');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(55) NOT NULL,
+  `password` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id_user`, `username`, `password`) VALUES
+(1, 'ekadiah29', '12345'),
+(2, 'prtmptr', '123456'),
+(3, 'sheillanbl', 'akusela');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `data_dokter`
+--
+ALTER TABLE `data_dokter`
+  ADD PRIMARY KEY (`ID_Dokter`);
+
+--
+-- Indexes for table `data_konsul`
+--
+ALTER TABLE `data_konsul`
+  ADD PRIMARY KEY (`ID_Konsul`);
+
+--
+-- Indexes for table `data_pasien`
+--
+ALTER TABLE `data_pasien`
+  ADD PRIMARY KEY (`ID_Pasien`);
+
+--
+-- Indexes for table `data_treatment`
+--
+ALTER TABLE `data_treatment`
+  ADD PRIMARY KEY (`ID_Treatment`);
+
+--
+-- Indexes for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`No_Reservation`);
+
+--
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `data_dokter`
+--
+ALTER TABLE `data_dokter`
+  MODIFY `ID_Dokter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `data_konsul`
+--
+ALTER TABLE `data_konsul`
+  MODIFY `ID_Konsul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `data_pasien`
+--
+ALTER TABLE `data_pasien`
+  MODIFY `ID_Pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `data_treatment`
+--
+ALTER TABLE `data_treatment`
+  MODIFY `ID_Treatment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `No_Reservation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
