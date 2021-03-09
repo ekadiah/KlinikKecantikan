@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Data Reservasi MS Glow</title>
+         <ui:include src="Template_Sidebar.xhtml"/>
+        
+    </h:head>
+    <h:body>
+        <div class='container pt-4'>
+                       <div class="bg-light py-3">
+             <div class="container">
+               
+                </div>
+            </div>
+            <br/><br/>
+            
+            <div class="row">
+                <div class="col-4 pb-4">
+                    <a href="faces/DataReservasi.xhtml" class="btn btn-sm btn-primary">Tambah Reservasi</a> &nbsp; <a href="faces/EditDataReservasi.xhtml" class="btn btn-sm btn-primary">Modify</a>
+                </div><br/>
+                <div class="col-12">
+                    <h:form>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>No Reservasi</td>
+                                <td>ID Pasien</td>
+                                <td>Jenis Treatment</td>
+                                <td>Jumlah</td>
+                                <td>Tanggal Reservasi</td>
+                                <td>Jam Reservasi</td>
+                                <td>Konsul</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ui:repeat value="#{reservation.getAllRecords()}" var="reser">
+                                <tr>
+                                    <td><p>#{reser.noReservation}</p></td>
+                                    <td><p>#{reser.idPasien}</p></td>                                    
+                                    <td><p>#{reser.jenisTreatment}</p></td>
+                                    <td><p>#{reser.jumlah}</p></td>
+                                    <td><p>#{reser.tanggal}</p></td>
+                                    <td><p>#{reser.jam}</p></td>
+                                    <td><p>#{reser.konsul}</p></td>
+                                    <td>
+                                        <b:commandButton class="btn btn-sm btn-danger"  value="Delete"
+                                                         action="#{reservation.delete(reser.noReservation)}"/>
+                                    </td>
+                                </tr>
+                            </ui:repeat>
+                        </tbody>
+                    </table>
+                    </h:form>
+                </div>
+            </div>
+          
+        </div>
+        
+    </h:body>
+</html>
+

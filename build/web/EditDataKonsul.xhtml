@@ -1,0 +1,123 @@
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+
+        <style>
+            * {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 500%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 60px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: right;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Reservasi</h1>
+        <div class="container">
+         <h:form>
+            <div class="row">
+            <table>
+                
+                <div class="col-25"><tr>
+                        
+                        <td><h:outputLabel>ID Konsul</h:outputLabel></td> 
+                        <td><h:inputText value="#{dataKonsul.idKonsul}"/></td>
+                        
+                    </tr></div>
+                        
+                <div class="col-25"><tr>
+                        <td><h:outputLabel>ID Pasien</h:outputLabel></td> 
+                        <td><h:inputText value="#{dataKonsul.idPasien}"/></td>
+                    </tr></div>
+            <div class="col-25"><tr>
+                    <td><h:outputLabel>ID Dokter</h:outputLabel></td>
+                    <td><h:inputText value="#{dataKonsul.idDokter}"/></td>
+                </tr></div>
+                <div class="col-25"><tr>
+                        <td><h:outputLabel>Tanggal Konsul</h:outputLabel></td>
+                        <td><h:inputText value="#{dataKonsul.tanggal}"/></td>
+                    </tr></div>
+            <div class="col-25"><tr> 
+                    <td><h:outputLabel>Jam Konsul</h:outputLabel></td>
+                    <td><h:inputText value="#{dataKonsul.jam}"/></td>
+                </tr></div>
+            <div class="col-25"><tr> 
+                    <td><h:outputLabel>Pernah Konsul</h:outputLabel></td>
+                    <td><h:inputText value="#{dataKonsul.pernahKonsul}"/></td>
+                </tr></div>
+  
+                   
+                <td><h:commandButton value="Edit" action="DataKonsul2.xhtml"><f:actionListener binding="#{konsulBean.updateKonsuls(konsul)}"/></h:commandButton></td>
+                   
+            </table>
+            </div>
+        </h:form>
+</div>
+    </h:body>
+</html>
+
+
+
+

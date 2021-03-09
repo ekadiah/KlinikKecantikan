@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Data Treatment</title>
+         <ui:include src="Template_Sidebar.xhtml"/>
+        
+    </h:head>
+    <h:body>
+        <div class='container pt-4'>
+                       <div class="bg-light py-3">
+             <div class="container">
+               
+                </div>
+            </div>
+            <br/><br/>
+            
+            <div class="row">
+                <div class="col-4 pb-4">
+                    <a href="faces/DataTreatment.xhtml" class="btn btn-sm btn-primary">Tambah Treatment</a> &nbsp; <a href="faces/EditDataTreatment.xhtml" class="btn btn-sm btn-primary">Modify</a>
+                </div><br/>
+                <div class="col-12">
+                    <h:form>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>Kode Treatment</td>
+                                <td>Jenis Treatment</td>
+                                <td>Harga</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ui:repeat value="#{dataTreatment.getAllRecords()}" var="treat">
+                                <tr>
+                                    <td><p>#{treat.idTreatment}</p></td>                                    
+                                    <td><p>#{treat.jenisTreatment}</p></td>
+                                    <td><p>#{treat.harga}</p></td>
+                                    <td>
+                                        <b:commandButton class="btn btn-sm btn-danger"  value="Delete"
+                                                         action="#{dataTreatment.delete(treat.idTreatment)}"/>
+                                    </td>
+                                </tr>
+                            </ui:repeat>
+                        </tbody>
+                    </table>
+                    </h:form>
+                </div>
+            </div>
+          
+        </div>
+        
+    </h:body>
+</html>
+

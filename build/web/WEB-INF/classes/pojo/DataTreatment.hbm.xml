@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2020 6:44:39 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.DataTreatment" table="data_treatment" catalog="klinik_kecantikan2" optimistic-lock="version">
+        <id name="idTreatment" type="java.lang.Integer">
+            <column name="ID_Treatment" />
+            <generator class="identity" />
+        </id>
+        <property name="jenisTreatment" type="string">
+            <column name="`Jenis Treatment`" length="20" not-null="true" />
+        </property>
+        <property name="harga" type="string">
+            <column name="Harga" length="20" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

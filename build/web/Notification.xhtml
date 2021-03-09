@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Sukses Reservasi</title>
+        <style>
+body {
+  background-color: black;
+   
+}
+.happy{ 
+     font-family: 'Harmattan';font-size: 25px;
+     color: whitesmoke;
+    padding-top:  30px;
+    text-align: center;
+}
+.button{
+    margin-left: 630px;
+   font-family: 'Harmattan';font-size: 25px;
+    color: #ccc;
+    padding-top: 50px;
+    
+}
+.glow {
+    font-family: 'Dancing Script';font-size: 22px;
+  font-size: 60px;
+  color: #fff;
+  padding-top: 30px;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+</style>
+        <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'></link>
+        <link href='https://fonts.googleapis.com/css?family=Harmattan' rel='stylesheet'></link>
+    </h:head>
+    <h:body>
+        <h:form>
+        <p class="happy" >Terimakasih telah Reservasi<br/>Konfirmasi reservasi telah dikirim ke Email<br/> dan Nomor Telepon Anda</p>
+        <h2 class="glow">Happy Treatment!!</h2><br/><br/>
+        <h:commandLink class="button" value="Finish" action="HomepageReservasi.xhtml"/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2020 6:44:39 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.DataDokter" table="data_dokter" catalog="klinik_kecantikan2" optimistic-lock="version">
+        <id name="idDokter" type="java.lang.Integer">
+            <column name="ID_Dokter" />
+            <generator class="identity" />
+        </id>
+        <property name="namaDokter" type="string">
+            <column name="Nama_Dokter" length="55" not-null="true" />
+        </property>
+        <property name="jadwalDokter" type="string">
+            <column name="Jadwal_Dokter" length="20" not-null="true" />
+        </property>
+        <property name="jam" type="string">
+            <column name="Jam" length="15" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

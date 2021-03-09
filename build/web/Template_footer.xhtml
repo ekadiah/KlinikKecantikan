@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Footer</title>
+        <style>
+            footer {
+	margin-top			: 3px;
+	text-align			: center;
+	background-color	: #fff7f3;
+	padding				: 60px 0px;
+}
+
+footer ul.social-icons {
+	padding-bottom		: 60px;
+	margin-bottom		: 60px;
+	border-bottom		: 1px solid rgba(250,250,250,0.15);
+}
+
+footer ul.social-icons li {
+	display				: inline-block;
+	margin-right		: 30px;
+}
+
+footer ul.social-icons li:after {
+	content				: "|";
+	color				: black;
+	margin-left			: 30px;
+}
+
+footer ul.social-icons li:last-child {
+	margin-right		: 0px;
+}
+
+footer ul.social-icons li:last-child::after {
+	display				: none;
+}
+
+footer ul.social-icons li a {
+	font-size			: 14px;
+	text-transform		: uppercase;
+        color				: #000033;
+	font-weight			: 500;
+	letter-spacing		: 0.25px;
+	transition			: all .3s;
+}
+
+footer ul.social-icons li a:hover {
+    color				: #ff9999;
+}
+
+footer p {
+	font-size			: 13px;
+	text-transform		: uppercase;
+        color				: #000033;
+}
+
+footer p a {
+    color				: black;
+}
+
+footer p a:hover {
+	color				: #969db6;
+}
+        </style>
+    </h:head>
+    <h:body>
+      <footer>
+          <h:form>
+            <div class="container2">
+              <div class="row2">
+                <div class="col-lg-12">
+                  <ul class="social-icons">
+                      <li><h:commandLink >Email</h:commandLink></li>
+                      <li><h:commandLink>Instagram</h:commandLink></li>
+                      <li><h:commandLink>Facebook</h:commandLink></li>
+                      <li><h:commandLink>Whatsapp</h:commandLink></li>
+                      <li><h:commandLink>LinkedIn</h:commandLink></li>
+                      <li><h:commandLink>Shoppee</h:commandLink></li>
+                  </ul>
+                </div>
+                <div class="col-lg-12">
+                  <div class="copyright-text">
+                   
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63459.67180239524!2d106.61465505814863!3d-6.233450272622718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ff9514904587%3A0x33267e95073869ab!2sStore%20Ms%20Glow%20Tangerang!5e0!3m2!1sid!2sid!4v1603206581334!5m2!1sid!2sid" width="1200" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <p>&copy;Copyright 2020 Ms.Glow</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </h:form>
+          </footer>
+    </h:body>
+</html>
+

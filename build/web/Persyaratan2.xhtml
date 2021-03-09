@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'></link>
+        <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'></link>
+        <style>
+          * {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+
+}
+             .button_log
+            {
+                margin-left: 20px;
+               background-color: #f99494;
+                color: white;
+                padding: 3px 5px;
+                
+                border-radius: 5px;
+                cursor: pointer;
+                width: 20%;
+              
+            }
+             .button_log:hover{
+                    background-color: #ccccff;
+                } 
+        </style>
+    </h:head>
+    <h:body>
+        <ui:include src="Template_header.xhtml"/>
+        <table>
+            <h:form>
+                <h1 style="font-family: 'Aldrich';font-size: 22px; color:#f99494; ">Selamat datang di Ms Glow, Silahkan klik login dibawah ini untuk reservasi</h1>
+                
+                <div class="row">
+                    <div class="column" style="background-color:#edecec;">
+                        <h2 style="font-family: 'Cardo';font-size: 22px;">Persyaratan Reservasi</h2>
+                               <ul>
+                                        <li>Sudah Membuat Akun</li>
+                                        <li>Mengisi Data Diri</li>
+                                        <li>Mengisi Data Reservasi</li>
+                                        <li>Menentukan jenis treatment</li>
+                                        <li>Menentukan hari</li>
+                                        <li>Visit ke klinik Ms.Glow </li> </ul>
+                              <h:commandButton class="button_log" value="Login as Admin" action="LoginAdmin.xhtml"/>
+                            </div>
+                    <div class="column" style="background-color:#e2e0e0;">
+                              <h2 style="font-family: 'Cardo';font-size: 22px;">Alur Reservasi</h2>
+                               <ol>
+                                        <li>Sign Up Accout</li>
+                                        <li>Login</li>
+                                        <li>Fill in Data</li>
+                                        <li>Reservation</li>
+                                        <li>Visit Our Clinic</li>
+                                    </ol><h:commandButton class="button_log" value="Login User" action="LoginUser.xhtml"/>
+                            </div>
+                          </div>
+                 
+                 
+                
+               
+                
+            </h:form>
+        </table>
+        <ui:include src="Template_footer.xhtml"/>
+    </h:body>
+</html>
+

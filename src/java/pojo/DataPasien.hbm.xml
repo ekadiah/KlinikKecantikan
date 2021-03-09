@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2020 6:44:39 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.DataPasien" table="data_pasien" catalog="klinik_kecantikan2" optimistic-lock="version">
+        <id name="idPasien" type="java.lang.Integer">
+            <column name="ID_Pasien" />
+            <generator class="identity" />
+        </id>
+        <property name="noIdentitas" type="string">
+            <column name="No_Identitas" length="12" not-null="true" />
+        </property>
+        <property name="namaPasien" type="string">
+            <column name="Nama_Pasien" length="20" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="25" not-null="true" />
+        </property>
+        <property name="noHp" type="string">
+            <column name="No_Hp" length="12" not-null="true" />
+        </property>
+        <property name="alamat" type="string">
+            <column name="Alamat" length="65535" not-null="true" />
+        </property>
+        <property name="tglLahir" type="string">
+            <column name="Tgl_Lahir" length="10" not-null="true" />
+        </property>
+        <property name="jenisKelamin" type="string">
+            <column name="Jenis_Kelamin" length="10" not-null="true" />
+        </property>
+        <property name="jenisKulit" type="string">
+            <column name="Jenis_Kulit" length="10" not-null="true" />
+        </property>
+        <property name="pekerjaan" type="string">
+            <column name="Pekerjaan" length="15" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

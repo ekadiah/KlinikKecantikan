@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Header</title>
+        <style>
+            .header { 
+	padding-block-start	: 10px;
+	font-size			: 18px;
+        font-weight			: 200;
+	color				: black;
+        background			: #fff7f3;
+	width				: 100%;
+	height				: 180px;
+	
+}
+
+ .logo {
+	 float			: left;
+	 margin-bottom		: 10px;
+	 padding-left		: 50px;
+	 padding-block-end: 0 px;
+	
+       
+        
+ }
+ .navbar {
+	 float				: right;
+	 padding-right: 50px;
+	 font-family: brandon-grotesque, sans-serif;
+	 font-size: 14px;
+	 font-style: normal;
+	 font-weight: normal;
+	 letter-spacing: 2px;
+	 line-height: 12px;
+	 text-transform: uppercase;
+         margin-top: 30px;
+	}
+
+ .navbar ul {
+	 list-style			: none;padding-top: 20px; padding-left: 20px;
+	}
+
+ .navbar ul li {
+	 display			: inline; margin:10px;
+	}
+
+ .navbar ul li a{
+	 text-decoration	: none; 
+	 color: #888;
+	}
+
+ .navbar ul li a:hover {
+     border-bottom		: 2px solid #ffccff;
+	}
+
+        </style>
+    </h:head>
+    <h:body>
+       <div class="header">
+           
+        <div class="logo">
+            <h:graphicImage value="/images/logo2.png" alt="logo" width="90%" height="200px" /> &nbsp;
+          
+        </div>
+           
+        <nav class="navbar">
+            <ul>
+                <li> <a href="HomePage.xhtml">Home</a></li>
+                <li> <a href="Persyaratan2.xhtml">Reservasi</a></li>
+                <li> <a href="ContactUs.xhtml">Contact Us</a></li>
+                 <li> <a href="AboutUs.xhtml">About Us</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+        
+    </h:body>
+</html>
+

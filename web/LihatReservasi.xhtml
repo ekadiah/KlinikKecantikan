@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+<link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'></link>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 500%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+input[type=submit] {
+  background-color: #f2f2f2;
+  color: black;
+  padding: 12px 60px;
+ 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #ccc;
+}
+
+.container {
+  border-radius: 5px ;
+  background-color: #fff2f5;
+  padding: 20px;
+  margin-left: 330px;
+  width: 50%;
+}
+
+.col-25 {
+    padding-left: 50px ;
+  float: right;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+        </style>
+        <title>Data Reservasi</title>
+    </h:head>
+    <h:body>
+        
+        <div class="container"><h1 style="font-family: 'Aldrich';font-size: 28px; color: #ccc;" align="center">Reservasi</h1>
+            <h:form>
+            <div class="row">
+            <table>
+                 <div class="col-25"><tr>
+                        <td><h:outputLabel>No Reservasi</h:outputLabel></td>
+                        <td><h:outputText value="#{reservation.noReservation}" />
+                            
+                    </td>
+                    </tr></div>
+                 <div class="col-75"><tr>
+                        <td><h:outputLabel>ID Pasien</h:outputLabel></td>
+                        <td><h:outputText value="#{reservation.idPasien}" />
+                            
+                    </td>
+                    </tr></div>
+                <div class="col-25">
+                <tr>
+                    <td><h:outputLabel>Jenis Treatment</h:outputLabel></td>
+                    <td>
+                        <h:outputText value="#{reservation.jenisTreatment}" />
+                    </td>
+                </tr></div>
+                <div class="col-75"><tr>
+                        <td><h:outputLabel>Jumlah Treatment</h:outputLabel></td>
+                        <td><h:outputText value="#{reservation.jumlah}" />
+                            
+                    </td>
+                    </tr></div>
+                <div class="col-25"><tr>
+                        <td><h:outputLabel>Tanggal Reservasi</h:outputLabel></td>
+                        <td><h:outputText value="#{reservation.tanggal}"/></td>
+                    </tr></div>
+                <div class="col-75"><tr>
+                        <td><h:outputLabel>Jam Reservasi</h:outputLabel></td>
+                        <td><h:outputText value="#{reservation.jam}" /></td>
+                    </tr></div> 
+                <div class="col-25"><tr>
+                        <td><h:outputLabel>Konsul Dokter</h:outputLabel></td>
+                        <td><h:outputText value="#{reservation.konsul}" /></td>
+                    </tr></div>
+                <tr>
+                    <td>
+                        <h:commandButton value="Submit" action="Notification.xhtml"/>
+                    </td>
+                </tr>
+            </table>
+                
+            </div>
+        </h:form>
+        </div>
+    </h:body>
+</html>
+

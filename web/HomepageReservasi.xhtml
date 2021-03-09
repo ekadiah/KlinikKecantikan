@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>MS Glow Official</title>
+         <link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'></link>
+        <style>
+            .images{
+         float				: right;
+	 padding-right: 60px;
+	
+	 line-height: 12px;
+	
+         margin-top:0px;
+         padding-bottom: 40px;
+            }
+            
+            .content
+            
+            .head{
+                font-family: 'Cardo';
+                font-size: 28px; color: #a09c9c;
+                margin-left: 40px;
+            }
+            
+            .isi{
+                margin-left: 40px;
+                font-family: Linguine;
+            }
+            .konten{
+                font-family: monospace;
+                font-size: 17px;
+                padding-left: 8px;
+            }
+            .foto{
+                padding-bottom: 20px;
+            }
+            .button_log
+            {
+              background-color: #f99494;
+                color: white;
+                padding: 3px 5px;
+                margin: 5px 0;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 7%;
+              
+            }
+             .button_log:hover{
+                    background-color: #ccccff;
+                } 
+                 .button_log2
+            {
+              background-color: #f99494;
+                color: white;
+                padding: 3px 5px;
+                margin: 5px 0;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+              
+            }
+             .button_log2:hover{
+                    background-color: #ccccff;
+                } 
+           
+        </style>
+        
+            
+           
+    </h:head>
+    <h:body>
+        <ui:include src="Template_header.xhtml"/>
+        <h:form>
+        <table border="1" align="top" width="100%" style="height: 421px; background-color:#969db6">
+           
+            
+            <td width="85%" valign="top" bgcolor="white" height="560px">
+                <br/><br/>
+                <h1 style="text-align: center; font-family: 'Cardo';font-size: 28px; color: #f99494;">Website Official Ms. Glow</h1>
+                <p style="font-family:monospace;font-size:20px;padding-left: 10px; "> MS Glow Beauty merupakan perusahaan kecantikan yang menghadirkan berbagai produk skin care 
+                   untuk wanita dan pria. Berbagai produk kulit dihadirkan demi menunjang kebutuhan kecantikan 
+                   dan kesehatan kulit anda.</p>
+                    <hr/>
+                   <br/><br/>
+               
+                            <div class="content"> 
+                            <h2 class="head">
+                                Silahkan Lakukan Reservasi Online untuk Treatment di Ms Glow
+                            </h2>
+                             
+                            <p class="isi">
+                                <h:commandButton class="button_log" value="Reservasi" action="/FormDataPasien.xhtml"/>
+                            </p>
+                    <h2 class="head">
+                                List Treatment Ms Glow
+                            </h2>
+                    <p class="isi">
+                        <h:commandButton class="button_log" value="View" action="/LihatTreatmentUser.xhtml"/>
+                            </p>
+                    <h2 class="head">
+                                Lihat Reservasi Anda
+                            </h2>
+                    <p class="isi">
+                        <table>
+                            <tr>
+                                <td><h:inputText style="margin-left:40px;" value="#{reservation.noReservation}" a:placeholder="No Reservasi" /></td>
+                                <td><h:commandButton class="button_log2" value="Search" action="#{reservation.getByIduser()}"/></td>
+                            </tr>
+                            <tr></tr>
+                            
+                        </table>
+                            </p>
+                            </div>
+                     
+                     
+                     <p class="konten">Kami Menyediakan berbagi macam paket kecantikan tergantung kebutuhan dan jenis kulit </p>
+                     <p class="konten"> Kami pula menyediakan fasilitas treatment,Ayo Segera lakukan reservasi! </p>
+                     <br/><br/><hr/>
+                     
+                     
+                     <div>
+                         <h2 style="padding-left: 30px; text-align: center; font-family: monospace">Treatment</h2>
+                     </div>
+                     <div class="foto">
+                         <h:graphicImage value="/images/treatment1.jpg" alt="logo" width="auto" height="250px" style="padding-left: 50px;"/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                           <h:graphicImage value="/images/treatment2.jpg" alt="logo" width="auto" height="250px"/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <h:graphicImage value="/images/treatment3.jpg" alt="logo" width="auto" height="250px"/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                             <h:graphicImage value="/images/treatment4.jpg" alt="logo" width="auto" height="250px"/>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                     </div>
+                   
+            </td>
+            
+           
+              
+              
+            
+        </table>
+        </h:form>
+        <ui:include src="Template_footer.xhtml"/>
+    </h:body>
+</html>
+
+

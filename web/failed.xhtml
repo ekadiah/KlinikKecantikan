@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Login</title>
+        <style>
+            .input_text[type=text], input[type=password]
+            {
+                width:80%;
+                padding: 10px 18px;
+                margin: 5px 0px;
+                display: inline-block;
+                border: 1px solid #ccc;
+            }
+           .button_log
+            {
+                background-color: #f99494;;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 55%;
+            }
+                .button_log:hover{
+                    background-color: #ccccff;
+                } 
+            .model-content{
+                background-color: #fefefe;
+                margin: 5% auto 15% auto;
+                border: 1px solid #888;
+                width: 55%;
+                text-align: center;
+                    
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form class="model-content">
+            <h2>Login</h2>
+            <h:inputText class="input_text" a:placeholder="Username" value="#{tblAdmin.usernameAdmin}"/><br/>
+            <h:inputSecret class="input_text" a:placeholder="Password" value="#{tblAdmin.passwordAdmin}"/><br/>
+            <h:commandButton class="button_log" value="Login" action="#{tblAdmin.login_admin()}"/>
+            <h:commandButton class="button_log" value="Sign Up" action="/SignUp.xhtml"/>
+            <h3 style="color: red;">Maaf, Username atau Password yang Anda Masukkan Salah</h3>
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+
+
